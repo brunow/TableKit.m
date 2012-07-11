@@ -5,7 +5,7 @@ Create table view with blocks based syntax. This library is extracted from [Base
 
 ## Installation
 
-**Copy** ** TableKit** dir into your project.
+**Copy** **TableKit** dir into your project.
 
 ## Example code
 
@@ -37,7 +37,7 @@ TableKit provide many type of model that you can use.
 
 ### TKTableModel
 
-Basic model that doesn't handle data list. You will need to create a block that return an object for an indexPath.
+Basic model that **doesn't handle** data **list**. You will need to create a block that return an object for an indexPath.
 
 	[self.tableModel setObjectForRowAtIndexPathWithBlock:^id(NSIndexPath *indexPath) {
 		return [self.items objectAtIndex:indexPath.row];
@@ -45,14 +45,15 @@ Basic model that doesn't handle data list. You will need to create a block that 
 
 ### TKListTableModel
 
-Model that handle flat list of items without section support.
+Model that handle **flat list** of **items** without section support.
 
 Loading items
+
 	- (void)loadTableItems:(NSArray *)items;
 
 ### TKManagedTableModel
 
-Model that conform to NSFetchedResultsControllerDelegate. All you need is to set a fetched result controller by using the methods below:
+Model that **conform** to **NSFetchedResultsControllerDelegate**. All you need is to set a fetched result controller by using the methods below:
 
 	- (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
 
