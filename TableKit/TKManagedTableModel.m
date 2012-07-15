@@ -119,7 +119,8 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self cellForRowAtIndexPath:indexPath];
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationNone];
             break;
             
         case NSFetchedResultsChangeMove:
