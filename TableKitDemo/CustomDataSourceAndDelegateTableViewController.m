@@ -25,7 +25,7 @@
     
     self.tableModel = [TKTableModel tableModelForTableView:self.tableView];
     
-    [self.tableModel setObjectForRowAtIndexPathWithBlock:^id(NSIndexPath *indexPath) {
+    [self.tableModel objectForRowAtIndexPathWithBlock:^id(NSIndexPath *indexPath) {
         return [self.items objectAtIndex:indexPath.row];
     }];
     
