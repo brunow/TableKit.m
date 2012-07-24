@@ -102,7 +102,7 @@ Otherwise you will need to call table model method at hand.
 
 Take the example above. **Item** object contain a property named **title** and **MovieViewCell** contain a **UILabel** called **textLabel** that herself has a property **text** to changed the label text.
 
-## Migrating form BaseKit CellMapping
+## Migrating from BaseKit CellMapping
 
 The most biggest change is that classes are now prefixed with TK instead of BK.
 
