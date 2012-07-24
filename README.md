@@ -104,8 +104,6 @@ Take the example above. **Item** object contain a property named **title** and *
 
 ## Migrating from BaseKit CellMapping
 
-Rename 
-
 Classes are now prefixed with TK instead of BK so just rename classes. The second change is that now you've different type of model described above.
 
 ## ARC
