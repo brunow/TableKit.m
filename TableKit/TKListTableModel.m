@@ -18,8 +18,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)loadTableItems:(NSArray *)items {
-    _items = [NSMutableArray arrayWithArray:items];
-    [self.tableView reloadData];
+    if (items.count > 0) {
+        _items = [NSMutableArray arrayWithArray:items];
+        [self.tableView reloadData];
+    }
 }
 
 
