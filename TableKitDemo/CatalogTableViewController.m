@@ -20,6 +20,7 @@
 #define WILL_DISPLAY_CELL @"WillDisplayCellExampleViewController"
 #define FETCHED_RESULTS @"NSFetchedResultsViewController"
 #define STRING_MAPPING @"NSStringMappingViewController"
+#define SECTION_MODEL @"SectionedTableViewController"
 
 @implementation CatalogTableViewController
 
@@ -58,6 +59,7 @@
                       [Item itemWithTitle:@"Editing table view" subtitle:nil type:EDITING],
                       [Item itemWithTitle:@"Will display cell block" subtitle:nil type:WILL_DISPLAY_CELL],
                       [Item itemWithTitle:@"Fetched results" subtitle:nil type:FETCHED_RESULTS],
+                      [Item itemWithTitle:@"Section example" subtitle:nil type:SECTION_MODEL],
                       nil];
     
     [self.tableModel loadTableItems:items];

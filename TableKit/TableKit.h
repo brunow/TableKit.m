@@ -25,3 +25,4 @@
 #import "UITableViewCell+TableKit.h"
 #import "TKListTableModel.h"
 #import "TKManagedTableModel.h"
+#import "TKSectionedTableModel.h"

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E701694E15C6B13E002CB278 /* SectionedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E701694D15C6B13E002CB278 /* SectionedTableViewController.m */; };
+		E701695215C6B19B002CB278 /* TKSectionedTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E701695115C6B19B002CB278 /* TKSectionedTableModel.m */; };
 		E70BD2CE15AC99DD0064C166 /* UITableViewCell+TableKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E70BD2CC15AC99DD0064C166 /* UITableViewCell+TableKit.m */; };
 		E721801015AB636200C61C03 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E721800F15AB636200C61C03 /* libKiwi.a */; };
 		E721801615AB646900C61C03 /* TKCellMapperSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = E721801315AB646900C61C03 /* TKCellMapperSpecs.m */; };
@@ -86,6 +88,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E701694C15C6B13E002CB278 /* SectionedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionedTableViewController.h; sourceTree = "<group>"; };
+		E701694D15C6B13E002CB278 /* SectionedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionedTableViewController.m; sourceTree = "<group>"; };
+		E701695015C6B19B002CB278 /* TKSectionedTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSectionedTableModel.h; sourceTree = "<group>"; };
+		E701695115C6B19B002CB278 /* TKSectionedTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSectionedTableModel.m; sourceTree = "<group>"; };
 		E70BD2CC15AC99DD0064C166 /* UITableViewCell+TableKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+TableKit.m"; sourceTree = "<group>"; };
 		E70BD2CD15AC99DD0064C166 /* UITableViewCell+TableKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+TableKit.h"; sourceTree = "<group>"; };
 		E721800F15AB636200C61C03 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "../dev/xcodeBuilds/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
@@ -332,6 +338,8 @@
 				E725E87E15AB53F800407719 /* Supporting Files */,
 				E721801B15AB74A900C61C03 /* NSStringMappingViewController.h */,
 				E721801C15AB74A900C61C03 /* NSStringMappingViewController.m */,
+				E701694C15C6B13E002CB278 /* SectionedTableViewController.h */,
+				E701694D15C6B13E002CB278 /* SectionedTableViewController.m */,
 			);
 			path = TableKitDemo;
 			sourceTree = "<group>";
@@ -382,6 +390,8 @@
 				E725E8B815AB543100407719 /* TKManagedTableModel.m */,
 				E725E8B915AB543100407719 /* TKTableModel.h */,
 				E725E8BA15AB543100407719 /* TKTableModel.m */,
+				E701695015C6B19B002CB278 /* TKSectionedTableModel.h */,
+				E701695115C6B19B002CB278 /* TKSectionedTableModel.m */,
 			);
 			path = TableKit;
 			sourceTree = "<group>";
@@ -645,6 +655,8 @@
 				E721801D15AB74A900C61C03 /* NSStringMappingViewController.m in Sources */,
 				E722A02C15ABEE0F003573C9 /* TKCellMapper.m in Sources */,
 				E70BD2CE15AC99DD0064C166 /* UITableViewCell+TableKit.m in Sources */,
+				E701694E15C6B13E002CB278 /* SectionedTableViewController.m in Sources */,
+				E701695215C6B19B002CB278 /* TKSectionedTableModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

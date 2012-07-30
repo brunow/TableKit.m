@@ -34,3 +34,5 @@ typedef void(^TKTableViewCellWillDisplayCellBlock)(UITableViewCell *cell, id obj
 typedef void(^TKTableViewCommitEditingStyleBlock)(id object, NSIndexPath *indexPath, UITableViewCellEditingStyle editingStyle);
 
 typedef UITableViewCellEditingStyle(^TKTableViewEditingStyleBlock)(id object, NSIndexPath *indexPath);
+
+typedef UIView *(^TKTableViewForHeaderInSectionViewBlock)(UITableView *tableView, NSInteger section, NSString *title);
