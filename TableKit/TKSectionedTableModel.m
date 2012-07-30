@@ -64,9 +64,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    NSString *title = [self tableView:self.tableView titleForHeaderInSection:section];
-    NSAssert(self.viewForHeaderInSectionBlock != nil, @"viewForHeaderInSectionWithBlock Block must be set");
-    return self.viewForHeaderInSectionBlock(tableView, section, title);
+    if (nil != self.viewForHeaderInSectionBlock) {
+        NSString *title = [self tableView:self.tableView titleForHeaderInSection:section];
+        return self.viewForHeaderInSectionBlock(tableView, section, title);
+    }
+    
+    return nil;
 }
 
 
