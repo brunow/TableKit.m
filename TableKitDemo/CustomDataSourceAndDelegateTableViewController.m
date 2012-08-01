@@ -25,8 +25,9 @@
     
     self.tableModel = [TKTableModel tableModelForTableView:self.tableView];
     
+    __weak CustomDataSourceAndDelegateTableViewController *weakRef = self;
     [self.tableModel objectForRowAtIndexPathWithBlock:^id(NSIndexPath *indexPath) {
-        return [self.items objectAtIndex:indexPath.row];
+        return [weakRef.items objectAtIndex:indexPath.row];
     }];
     
     [TKCellMapping mappingForObjectClass:[Item class] block:^(TKCellMapping *cellMapping) {
