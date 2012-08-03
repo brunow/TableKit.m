@@ -107,6 +107,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
+    
+    if ([_fetchedResultsControllerDelegate respondsToSelector:@selector(controllerWillChangeContent:)]) {
+        [_fetchedResultsControllerDelegate controllerWillChangeContent:controller];
+    }
 }
 
 
@@ -144,6 +148,14 @@
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
+    
+    if ([_fetchedResultsControllerDelegate respondsToSelector:@selector(controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:)]) {
+        [_fetchedResultsControllerDelegate controller:controller
+                                      didChangeObject:anObject
+                                          atIndexPath:indexPath
+                                        forChangeType:type
+                                         newIndexPath:newIndexPath];
+    }
 }
 
 
@@ -162,12 +174,23 @@
                           withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
+    
+    if ([_fetchedResultsControllerDelegate respondsToSelector:@selector(controller:didChangeSection:atIndex:forChangeType:)]) {
+        [_fetchedResultsControllerDelegate controller:controller
+                                     didChangeSection:sectionInfo
+                                              atIndex:sectionIndex
+                                        forChangeType:type];
+    }
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
+    
+    if ([_fetchedResultsControllerDelegate respondsToSelector:@selector(controllerDidChangeContent:)]) {
+        [_fetchedResultsControllerDelegate controllerDidChangeContent:controller];
+    }
 }
 
 

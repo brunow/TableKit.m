@@ -16,6 +16,7 @@ typedef NSFetchedResultsController*(^TKManagedTableModelFetchedResultsController
 @interface TKManagedTableModel : TKTableModel<NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, assign) id<NSFetchedResultsControllerDelegate, NSObject> fetchedResultsControllerDelegate;
 
 /**
  Return the number of section from model
