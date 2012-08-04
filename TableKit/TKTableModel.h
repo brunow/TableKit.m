@@ -33,7 +33,7 @@
 /**
  This is used to forward UITableViewDelegate, UITableViewDataSource and UIScrollViewDelegate unimplemend by TKTableModel.
  */
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, weak) id delegate;
 
 /**
  Short method to create a tableModel
