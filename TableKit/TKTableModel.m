@@ -24,7 +24,7 @@
 #import "UITableViewCell+TableKit.h"
 
 #import "TKTableModel+Private.h"
-
+#import <objc/runtime.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -281,6 +281,42 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
            editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return [self editingStyleForRowAtIndexPath:indexPath];
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Forward unimplemented methods
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)shouldForwardSelectorToDelegate:(SEL)aSelector {
+    struct objc_method_description description;
+    description = protocol_getMethodDescription(@protocol(UIScrollViewDelegate), aSelector, NO, YES);
+    BOOL isSelectorInScrollViewDelegate = (description.name != NULL && description.types != NULL);
+    
+    return (isSelectorInScrollViewDelegate && [self.delegate respondsToSelector:aSelector]);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)respondsToSelector:(SEL)aSelector {
+    if ([super respondsToSelector:aSelector] == YES) {
+        return YES;
+    }
+    
+    return [self shouldForwardSelectorToDelegate:aSelector];
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    if ([self shouldForwardSelectorToDelegate:aSelector]) {
+        return self.delegate;
+    }
+    
+    return nil;
 }
 
 

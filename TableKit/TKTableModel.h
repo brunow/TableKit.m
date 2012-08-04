@@ -31,6 +31,11 @@
 @property (nonatomic, readonly) NSMutableDictionary *objectMappings;
 
 /**
+ This is used to forward UITableViewDelegate, UITableViewDataSource and UIScrollViewDelegate unimplemend by TKTableModel.
+ */
+@property (nonatomic, assign) id delegate;
+
+/**
  Short method to create a tableModel
  @param tableView The tableView that will be used to show cell
  */
