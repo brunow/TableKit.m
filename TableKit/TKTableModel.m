@@ -285,6 +285,31 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    id object = [self objectForRowAtIndexPath:indexPath];
+    TKCellMapping *cellMapping = [self cellMappingForObject:object];
+    
+    if (nil != cellMapping.canMoveObjectBlock)
+        return cellMapping.canMoveObjectBlock(object, indexPath);
+    
+    return NO;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)tableView:(UITableView *)tableView
+moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+      toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+    id object = [self objectForRowAtIndexPath:sourceIndexPath];
+    TKCellMapping *cellMapping = [self cellMappingForObject:object];
+    
+    if (nil != cellMapping.moveObjectBlock)
+        cellMapping.moveObjectBlock(object, sourceIndexPath, destinationIndexPath);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Forward unimplemented methods

@@ -75,6 +75,7 @@
 		E73744C115AB583F001CD3BF /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = E73744A315AB583F001CD3BF /* MagicalRecord+Setup.m */; };
 		E73744C215AB583F001CD3BF /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E73744A515AB583F001CD3BF /* MagicalRecord+ShorthandSupport.m */; };
 		E73744C315AB583F001CD3BF /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E73744A715AB583F001CD3BF /* MagicalRecord.m */; };
+		E7789F7615D2F878006B479A /* ReorderingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7789F7515D2F878006B479A /* ReorderingTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,8 @@
 		E73744A715AB583F001CD3BF /* MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecord.m; sourceTree = "<group>"; };
 		E73744A815AB583F001CD3BF /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		E73744A915AB583F001CD3BF /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		E7789F7415D2F878006B479A /* ReorderingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReorderingTableViewController.h; sourceTree = "<group>"; };
+		E7789F7515D2F878006B479A /* ReorderingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReorderingTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +343,8 @@
 				E721801C15AB74A900C61C03 /* NSStringMappingViewController.m */,
 				E701694C15C6B13E002CB278 /* SectionedTableViewController.h */,
 				E701694D15C6B13E002CB278 /* SectionedTableViewController.m */,
+				E7789F7415D2F878006B479A /* ReorderingTableViewController.h */,
+				E7789F7515D2F878006B479A /* ReorderingTableViewController.m */,
 			);
 			path = TableKitDemo;
 			sourceTree = "<group>";
@@ -657,6 +662,7 @@
 				E70BD2CE15AC99DD0064C166 /* UITableViewCell+TableKit.m in Sources */,
 				E701694E15C6B13E002CB278 /* SectionedTableViewController.m in Sources */,
 				E701695215C6B19B002CB278 /* TKSectionedTableModel.m in Sources */,
+				E7789F7615D2F878006B479A /* ReorderingTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

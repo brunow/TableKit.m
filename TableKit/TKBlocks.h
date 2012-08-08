@@ -36,3 +36,7 @@ typedef void(^TKTableViewCommitEditingStyleBlock)(id object, NSIndexPath *indexP
 typedef UITableViewCellEditingStyle(^TKTableViewEditingStyleBlock)(id object, NSIndexPath *indexPath);
 
 typedef UIView *(^TKTableViewForHeaderInSectionViewBlock)(UITableView *tableView, NSInteger section, NSString *title);
+
+typedef BOOL(^TKTableViewCanMoveObjectBlock)(id object, NSIndexPath *indexPath);
+
+typedef void(^TKTableViewMoveObjectBlock)(id object, NSIndexPath *sourceIndexPath, NSIndexPath *toIndexPath);

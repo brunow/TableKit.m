@@ -33,6 +33,8 @@
 @property (nonatomic, copy) TKTableViewCellWillDisplayCellBlock willDisplayCellBlock;
 @property (nonatomic, copy) TKTableViewCommitEditingStyleBlock commitEditingStyleBlock;
 @property (nonatomic, copy) TKTableViewEditingStyleBlock editingStyleBlock;
+@property (nonatomic, copy) TKTableViewCanMoveObjectBlock canMoveObjectBlock;
+@property (nonatomic, copy) TKTableViewMoveObjectBlock moveObjectBlock;
 
 /**
  Initializes and returns a cell mapping object having an objectClass
@@ -104,5 +106,15 @@
  @param cellClass The cell the we must used to map values
  */
 - (void)mapObjectToCellClass:(Class)cellClass;
+
+/**
+ 
+ */
+- (void)canMoveObjectWithBlock:(TKTableViewCanMoveObjectBlock)canMoveObjectBlock;
+
+/**
+ 
+ */
+- (void)moveObjectWithBlock:(TKTableViewMoveObjectBlock)moveObjectBlock;
 
 @end

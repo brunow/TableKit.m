@@ -21,6 +21,7 @@
 #define FETCHED_RESULTS @"NSFetchedResultsViewController"
 #define STRING_MAPPING @"NSStringMappingViewController"
 #define SECTION_MODEL @"SectionedTableViewController"
+#define REORDERING @"ReorderingTableViewController"
 
 @implementation CatalogTableViewController
 
@@ -60,6 +61,7 @@
                       [Item itemWithTitle:@"Will display cell block" subtitle:nil type:WILL_DISPLAY_CELL],
                       [Item itemWithTitle:@"Fetched results" subtitle:nil type:FETCHED_RESULTS],
                       [Item itemWithTitle:@"Section example" subtitle:nil type:SECTION_MODEL],
+                      [Item itemWithTitle:@"Reordering example" subtitle:nil type:REORDERING],
                       nil];
     
     [self.tableModel loadTableItems:items];
