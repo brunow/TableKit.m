@@ -35,6 +35,7 @@
 @property (nonatomic, copy) TKTableViewEditingStyleBlock editingStyleBlock;
 @property (nonatomic, copy) TKTableViewCanMoveObjectBlock canMoveObjectBlock;
 @property (nonatomic, copy) TKTableViewMoveObjectBlock moveObjectBlock;
+@property (nonatomic, copy) TKTableViewCanEditObjectBlock canEditObjectBlock;
 
 /**
  Initializes and returns a cell mapping object having an objectClass
@@ -116,5 +117,9 @@
  
  */
 - (void)moveObjectWithBlock:(TKTableViewMoveObjectBlock)moveObjectBlock;
+
+/**
+ */
+- (void)canEditObjectWithBlock:(TKTableViewCanEditObjectBlock)canEditObjectBlock;
 
 @end

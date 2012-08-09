@@ -41,7 +41,10 @@
             }
         }];
         
-        // Not needed but you can set certain object to UITableViewCellEditingStyleInsert or UITableViewCellEditingStyleNone
+        [cellMapping canEditObjectWithBlock:^BOOL(id object, NSIndexPath *indexPath, UITableViewCellEditingStyle editingStyle) {
+            return (indexPath.row == 0) ? NO : YES;
+        }];
+        
         [cellMapping editingStyleWithBlock:^UITableViewCellEditingStyle(id object, NSIndexPath *indexPath) {
             return UITableViewCellEditingStyleDelete;
         }];
@@ -50,7 +53,7 @@
     }];
     
     NSArray *items = [NSArray arrayWithObjects:
-                      [Item itemWithTitle:@"Book1" subtitle:nil],
+                      [Item itemWithTitle:@"Book1 cannot be deleted" subtitle:nil],
                       [Item itemWithTitle:@"Book2" subtitle:nil],
                       [Item itemWithTitle:@"Book3" subtitle:nil],
                       [Item itemWithTitle:@"Book4" subtitle:nil],

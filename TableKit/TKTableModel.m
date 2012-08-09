@@ -265,6 +265,34 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)tableView:(UITableView *)tableView
+moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+      toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+    id object = [self objectForRowAtIndexPath:sourceIndexPath];
+    TKCellMapping *cellMapping = [self cellMappingForObject:object];
+    
+    if (nil != cellMapping.moveObjectBlock)
+        cellMapping.moveObjectBlock(object, sourceIndexPath, destinationIndexPath);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    id object = [self objectForRowAtIndexPath:indexPath];
+    TKCellMapping *cellMapping = [self cellMappingForObject:object];
+    
+    UITableViewCellEditingStyle editingStyle = [self tableView:tableView
+                                 editingStyleForRowAtIndexPath:indexPath];
+    
+    if (nil != cellMapping.canEditObjectBlock)
+        return cellMapping.canEditObjectBlock(object, indexPath, editingStyle);
+    
+    return NO;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark UITableViewDelegate
@@ -293,19 +321,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         return cellMapping.canMoveObjectBlock(object, indexPath);
     
     return NO;
-}
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)tableView:(UITableView *)tableView
-moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
-      toIndexPath:(NSIndexPath *)destinationIndexPath {
-    
-    id object = [self objectForRowAtIndexPath:sourceIndexPath];
-    TKCellMapping *cellMapping = [self cellMappingForObject:object];
-    
-    if (nil != cellMapping.moveObjectBlock)
-        cellMapping.moveObjectBlock(object, sourceIndexPath, destinationIndexPath);
 }
 
 
