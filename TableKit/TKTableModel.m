@@ -285,10 +285,15 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     UITableViewCellEditingStyle editingStyle = [self tableView:tableView
                                  editingStyleForRowAtIndexPath:indexPath];
     
-    if (nil != cellMapping.canEditObjectBlock)
-        return cellMapping.canEditObjectBlock(object, indexPath, editingStyle);
+    BOOL canEdit = NO;
     
-    return NO;
+    if (nil != cellMapping.canEditObjectBlock)
+        canEdit = cellMapping.canEditObjectBlock(object, indexPath, editingStyle);
+    
+    if (nil != cellMapping.canMoveObjectBlock)
+        canEdit = canEdit || cellMapping.canMoveObjectBlock(object, indexPath);
+    
+    return canEdit;
 }
 
 
