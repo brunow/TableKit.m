@@ -7,6 +7,10 @@ Create table view with blocks based syntax. This library is extracted from [Base
 
 **Copy** **TableKit** dir into your project.
 
+Or with **Cocoapods**
+
+	pod 'TableKit.m', :git => "https://github.com/brunow/TableKit.m", :tag => "0.1.0"
+
 ## Example code
 
 	self.tableModel = [TKListTableModel tableModelForTableView:self.tableView];
