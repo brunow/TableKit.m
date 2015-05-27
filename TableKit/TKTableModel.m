@@ -108,7 +108,7 @@
     TKCellMapping *cellMapping = [self cellMappingForObject:object];
     
     if (nil != cellMapping.onSelectRowBlock) {
-        UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
         cellMapping.onSelectRowBlock(cell, object, indexPath);
     }
 }
